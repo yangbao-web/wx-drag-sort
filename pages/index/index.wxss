@@ -1,0 +1,6 @@
+/**index.wxss**/
+.ul .li{
+  display: inline-block;
+  box-sizing: border-box;
+  width: 25%;
+}

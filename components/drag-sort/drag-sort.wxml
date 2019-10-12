@@ -1,0 +1,38 @@
+<!--components/drag-sort-anim/drag-sort-anim.wxml-->
+<view class="image-list">
+  <view
+    class="image-item-wrap"
+    wx:for="{{imageList}}"
+    wx:key="{{index}}">
+    <view
+      wx:if="{{item.type !== 'upload'}}"
+      class="image-item {{draging ? 'is-draging' : ''}} {{startIndex === index ? 'actived-image' : ''}} {{item.deleted ? 'hidden' : ''}}"
+      style="left: {{item.left}}px; top: {{item.top}}px;"
+      data-index="{{index}}"
+      catchlongpress="handleTouchstart"
+      catchtouchmove="handleTouchMove"
+      catchtouchcancel="handleTouchend"
+      catchtouchend="handleTouchend">
+      <view
+        class="image-content">
+        {{item.url}}
+      </view>
+      <view
+        class="delete-icon"
+        data-index="{{index}}"
+        catchtap="handleDelete">
+      </view>
+    </view>
+    <view
+      wx:elif="{{item.type === 'upload'}}"
+      class="image-item {{draging ? 'is-draging' : ''}}"
+      style="left: {{item.left}}px; top: {{item.top}}px;">
+      <view
+        class="image-content">
+        上传图片
+      </view>
+    </view>
+  </view>
+</view>
+
+

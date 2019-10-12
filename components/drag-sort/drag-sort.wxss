@@ -1,0 +1,50 @@
+/* components/drag-sort-anim/drag-sort-anim.wxss */
+page {
+  --imageSize: 210rpx;
+}
+.image-list{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  padding: 0 30rpx 30rpx 0;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.image-item-wrap{
+  /* position: relative; */
+  margin: 30rpx 0 0 30rpx;
+  width: var(--imageSize);
+  height: var(--imageSize);
+}
+.image-item-wrap .image-item{
+  position: absolute;
+  width: var(--imageSize);
+  height: var(--imageSize);
+  background: #ececec;
+  transition: all 0 linear;
+}
+.image-item-wrap .image-item.is-draging{
+  transition-duration: 200ms;
+}
+.image-item-wrap .image-item.actived-image{
+  opacity: 0.8;
+  z-index: 100;
+  transition-duration: 0ms;
+}
+.image-item-wrap .image-item .image-content{
+  width: 100%;
+  height: 100%;
+}
+.delete-icon{
+  position: absolute;
+  right: -18rpx;
+  top: -18rpx;
+  width: 36rpx;
+  height: 36rpx;
+  background: red;
+  border-radius: 50%;
+}
+.hidden{
+  display: none !important;
+}

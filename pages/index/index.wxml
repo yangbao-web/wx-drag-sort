@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <drag-sort
+    data="{{imageList}}"
+    bind:change="handleChange">
+  </drag-sort>
+</view>
